@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/game.dart';
 
-class Cell extends StatelessWidget {
+class gridCell extends StatelessWidget {
   //var
   final Game mGame;
 
-  const Cell(this.mGame, {super.key});
+  const gridCell(this.mGame, {super.key});
 
   @override
   Widget build(BuildContext context) {
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(10.0),
-        child: Row(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Image.asset(
@@ -28,13 +28,7 @@ class Cell extends StatelessWidget {
                     mGame.title,
                     style: const TextStyle(color: Colors.black),
                   ),
-                  Text(
-                    "${mGame.price.floor().toString()} TND",
-                    style: const TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20),
-                  )
+                  
                 ],
               ),
             )

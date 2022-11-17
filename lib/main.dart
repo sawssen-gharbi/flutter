@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+
+import 'package:myapp/game_details.dart';
 import 'package:myapp/home_screen.dart';
+import 'package:myapp/signin.dart';
 import 'package:myapp/signup.dart';
 
-import 'game_details.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -15,12 +18,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      
         title: 'Atelier Flutter',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const signup());
+        home: SignIn());
   }
 }
