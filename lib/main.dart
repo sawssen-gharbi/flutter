@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:myapp/game_details.dart';
 import 'package:myapp/home_screen.dart';
+import 'package:myapp/panier.dart';
 import 'package:myapp/signin.dart';
 import 'package:myapp/signup.dart';
 
@@ -23,6 +24,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: SignIn());
+        home: Panier());
   }
 }
