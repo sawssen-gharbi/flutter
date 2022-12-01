@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/cell.dart';
+
+import 'game.dart';
 class CellPanier extends StatelessWidget {
 
-  final int price;
-  final String image;
+final Game _game;
 
-  const CellPanier(this.image, this.price);
+
+  CellPanier(this._game);
+
 
   
 
@@ -19,8 +23,8 @@ class CellPanier extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Icon(Icons.restore_from_trash_rounded, size: 50,),
-              Image.asset(image, height: 50,),
-              Text(price.toString() + ' TND', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),)
+              Image.asset(this._game.image, height: 50,),
+              Text(this._game.price.toString() + ' TND', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),)
             ],
           ),
         ),

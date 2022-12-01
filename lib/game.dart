@@ -5,10 +5,11 @@ class Game {
   late String image;
   late String title;
   late double price;
+  late int quantity;
 
   //constructor
   //Game(); //constructor par défaut
   Game.image(image);
   Game.two(this.image, this.title);
-  Game(this.image, this.title, this.price);
+  Game(this.image, this.title, this.price, {required this.quantity});
 }

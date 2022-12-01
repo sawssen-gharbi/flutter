@@ -1,8 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:myapp/game.dart';
+import 'package:myapp/arguments/game_argument.dart';
 
 class DetailsScreen extends StatefulWidget {
-  DetailsScreen({super.key});
+  
+ static const String routeName = "/Details";
+  
+
 
   @override
   State<DetailsScreen> createState() => _DetailsScreenState();
@@ -10,10 +15,13 @@ class DetailsScreen extends StatefulWidget {
 
 class _DetailsScreenState extends State<DetailsScreen> {
   //var
-  int nbr = 3000;
+  //int nbr = 3000;
 
   @override
   Widget build(BuildContext context) {
+        final GameArgument args =
+        ModalRoute.of(context)?.settings.arguments as GameArgument;
+
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
@@ -21,7 +29,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
         child: ListView(
           children: [
             //1
-            Image.asset("Assets/dmc5.jpg"),
+            Image.asset("Assets/${args.game.image}"),
             const SizedBox(
               height: 20,
             ),
@@ -34,25 +42,28 @@ class _DetailsScreenState extends State<DetailsScreen> {
               height: 50,
             ),
             //3
-            const Center(
+             Center(
               child: Text(
-                "200 TND",
+                 "${args.game.price.floor().toString()} TND",
                 style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
               ),
             ),
             const SizedBox(
               height: 20,
             ),
-            Center(child: Text("Exemplaires disponible : ${nbr.toString()}")),
+            Center(child: Text("Exemplaires disponible : ${args.game.quantity.toString()}")),
             const SizedBox(
               height: 50,
             ),
             ElevatedButton.icon(
                 onPressed: () {
                   setState(() {
-                    nbr--;
+                   if (args.game.quantity > 0) {
+                      args.game.quantity--;
+                    }
                   });
                 },
+
                 icon: const Icon(CupertinoIcons.shopping_cart),
                 label: const Text("Acheter"))
           ],

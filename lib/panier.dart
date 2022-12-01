@@ -12,11 +12,11 @@ class Panier extends StatefulWidget {
 
 class _Panier extends State<Panier> {
   //var
-  final List<Game> games = [
-    Game("dmc5.jpg", "Devil May Cry 5", 200),
-    Game("fifa.jpg", "Fifa 22", 200),
-    Game("nfs.jpg", "Need For Speed", 100),
-  ];
+  /*final List<Game> games = [
+    Game("dmc5.jpg", "Devil May Cry 5", 200, quantity: 1),
+    Game("fifa.jpg", "Fifa 22", 200,quantity: 1),
+    Game("nfs.jpg", "Need For Speed", 100,quantity: 1),
+  ];*/
 
   //actions
 
@@ -30,12 +30,15 @@ class _Panier extends State<Panier> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Panier"),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
             Container(
-              margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
+              margin: const EdgeInsets.fromLTRB(0, 10, 0, 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -51,9 +54,9 @@ class _Panier extends State<Panier> {
             ),
             Column(
               children: [
-                CellPanier("assets/dmc5.jpg", 200),
-                CellPanier("assets/minecraft.jpg", 200),
-                CellPanier("assets/fifa.jpg", 100),
+                CellPanier(Game("dmc5.jpg", "Devil May Cry 5", 200, quantity: 1)),
+                CellPanier(Game("fifa.jpg", "Fifa 22", 200,quantity: 1)),
+                CellPanier(Game("nfs.jpg", "Need For Speed", 100,quantity: 1))  ,
               ],
             )
           ],

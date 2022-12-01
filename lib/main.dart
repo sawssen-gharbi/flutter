@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-
 import 'package:myapp/game_details.dart';
 import 'package:myapp/home_screen.dart';
+import 'package:myapp/mdp.dart';
 import 'package:myapp/panier.dart';
 import 'package:myapp/signin.dart';
 import 'package:myapp/signup.dart';
@@ -24,6 +24,21 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: Panier());
+       // home: Panier(),
+      //home: const HomeScreen()
+      routes: {
+        SignIn.routeName: (context) => const SignIn(),
+        mdp.routeName: (context) => const mdp(),
+        SignUp.routeName: (context) => const SignUp(),
+        HomeScreen.routeName: (context) => const HomeScreen(),
+        DetailsScreen.routeName: (context) => DetailsScreen(),
+      },
+    );
   }
 }
+
+
+        
+        
+        
+    

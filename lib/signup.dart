@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class SignUp extends StatelessWidget {
+  static const String routeName = "/SignUp";
   const SignUp({super.key});
 
   @override

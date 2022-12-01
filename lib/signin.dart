@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:myapp/home_screen.dart';
+import 'package:myapp/mdp.dart';
+import 'package:myapp/signup.dart';
 
 class SignIn extends StatelessWidget {
+  static const String routeName = "/";
   const SignIn({super.key});
 
   @override
@@ -39,7 +43,13 @@ class SignIn extends StatelessWidget {
             child: ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
-              child: Text("S'authentifier"),
+              child: InkWell
+              
+              (onTap: () {
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
+                    },
+                
+                child: Text("S'authentifier")),
             ),
           ),
           Padding(
@@ -48,7 +58,11 @@ class SignIn extends StatelessWidget {
               onPressed: () {},
               style: ElevatedButton.styleFrom(
                   backgroundColor: Color.fromARGB(255, 246, 40, 22)),
-              child: Text("Créé un compte"),
+              child: InkWell
+              ( onTap: () {
+                      Navigator.pushNamed(context, SignUp.routeName);
+                    },
+                child: Text("Créé un compte")),
             ),
           ),
           Padding(
@@ -60,9 +74,14 @@ class SignIn extends StatelessWidget {
                   SizedBox(
                     width: 10,
                   ),
-                  Text(
-                    "Cliquez ici",
-                    style: TextStyle(color: Colors.blue),
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, mdp.routeName);
+                    },
+                    child: Text(
+                      "Cliquez ici",
+                      style: TextStyle(color: Colors.blue),
+                    ),
                   )
                 ],
               ))
